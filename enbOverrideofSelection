@@ -1,0 +1,10 @@
+import maya.cmds as cmds
+selectobjs = cmds.ls( dag=True, ap=True, sl=True )
+print selectobjs
+noObjs = len(selectobjs)
+print noObjs
+for i in range (0 , noObjs):
+    print selectobjs[i] + ".overrideEnabled "
+    setname = selectobjs[i] + ".overrideEnabled "
+    print setname 
+    cmds.setAttr(setname, 1)
